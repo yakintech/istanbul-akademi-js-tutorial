@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Left</label>
+        <input type="text" id="number" />
+    </div>
+    <div>
+        <button onclick="go()">Go</button>
+    </div>
+    <hr>
+    <div>
+        <img id="mert" width="100" height="100" src="https://pbs.twimg.com/profile_images/675216148871454720/EIsAaGlJ_400x400.jpg" />
+    </div>
+
+    
+</body>
+<script>
+    var total = 0;
+
+    function go(){
+        var left = document.getElementById('number').value;
+        total = total + Number(left)
+        console.log(total);
+        document.getElementById('mert').style.marginLeft = total + `px`
+    }
+</script>
+</html>

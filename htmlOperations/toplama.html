@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Sayi - 1</label>
+        <input type="text" id="sayi1" />
+    </div>
+    <div>
+        <label for="">Sayi - 2</label>
+        <input type="text" id="sayi2" />
+    </div>
+    <div>
+        <button onclick="topla()">Topla</button>
+    </div>
+</body>
+<script>
+    function topla(){
+        var data1 = document.getElementById('sayi1').value;
+        var data2 = document.getElementById('sayi2').value;
+
+        var result = Number(data1) + Number(data2)
+
+        alert(result)
+    }
+</script>
+</html>
