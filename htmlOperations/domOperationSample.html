@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="go()">Saga Kaydir</button>
+    <div id="box" style="width: 100px; height: 100px; border-style: solid;">
+
+    </div>
+    
+</body>
+<script>
+
+    var left = 50;
+    
+    function go(){
+        console.log("LEFT:", left)
+        document.getElementById('box').style.marginLeft = left + "px"
+        left = left + 50
+    }
+
+</script>
+</html>

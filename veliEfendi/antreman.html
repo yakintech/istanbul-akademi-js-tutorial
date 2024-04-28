@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="go()">Kos bakalim</button>
+    <hr>
+    <img id="at" style="width: 180px; height: 100px;" src="https://at.gen.tr/images/Ingiliz-Ati-48.jpg" alt="" >
+</body>
+<script>
+
+    function go(){
+
+       var left = 10
+       setInterval(() => {
+
+        document.getElementById('at').style.marginLeft = left + 'px';
+        left = left + 10
+        
+       }, 100);
+
+    }
+
+</script>
+</html>
