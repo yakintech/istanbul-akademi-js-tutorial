@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .addCategoryBox {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            margin: 0 auto;
+        }
+        .addCategoryBox div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="addCategoryBox">
+        <div>
+            <label for="">Name</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <button onclick="add()">Add</button>
+        </div>
+    </div>
+</body>
+<script>
+    function add() {
+        let name = document.getElementById('name').value;
+        fetch('https://localhost:44305/api/category', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert
+            //redirect to categories.html
+            window.location.href = 'categories.html';
+        })
+    }
+</script>
+</html>

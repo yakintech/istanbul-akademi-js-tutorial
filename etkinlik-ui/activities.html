@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .activities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .box {
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="activities">
+      
+
+    </div>
+</body>
+<script>
+
+    fetch('https://localhost:44305/api/activity')
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(element => {
+                let div = document.createElement('div');
+                div.className = 'box';
+                div.innerHTML = `
+                    <h1>${element.name}</h1>
+                    <p>${element.description}</p>
+                    <h3>${element.startDate}</h3>
+                    <h3>${element.categoryName}</h3>
+                    <ul>
+                        ${element.images.map(img => `<li><img src="https://localhost:44305/images/${img}" alt=""></li>`).join('')}
+                    </ul>
+                    <iframe
+    width="300"
+    height="200"
+    frameborder="0" style="border:0"
+    src="https://maps.google.com/maps?q=${element.latitude},${element.longitude}&hl=tr;z=5&amp;output=embed" allowfullscreen>
+    </iframe>
+                `;
+                document.querySelector('.activities').appendChild(div);
+
+            });
+        })
+
+    //     <iframe
+    // width="600"
+    // height="450"
+    // frameborder="0" style="border:0"
+    // src="https://maps.google.com/maps?q=41.0393,28.9944&hl=tr;z=5&amp;output=embed" allowfullscreen>
+    // </iframe>
+        
+</script>
+</html>
